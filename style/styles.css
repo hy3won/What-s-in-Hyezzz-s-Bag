@@ -1,0 +1,207 @@
+body, html {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: black;
+}
+
+
+div {
+    color: white;
+}
+
+h1 {
+    font-size: 22px;
+    color: black;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.8em;
+    font-weight: 400;
+    color: black;
+
+}
+
+b {
+    font-weight: 500;
+    color: black;
+}
+
+  
+.container {
+    position:fixed;
+    display: inline-block;
+    left: 5%;
+    width: 60%;
+}
+
+.container .bag {
+    display: block;
+    max-width: 100%;  /* to ensure the bag image doesn't overflow the container */
+    height: auto;
+}
+
+.container .item {
+    cursor: grab;
+    position: absolute;
+    top: 0; /* align items with the top of the container */
+    left: 0; /* align items with the left of the container */
+}
+
+.container .item.normal {
+    z-index: 2; /* normal image should be above hover image by default */
+}
+
+.container .item.hover {
+    display: none; /* hide hover image by default */
+    z-index: 3; /* hover image should be above normal image when shown */
+}
+
+.container .item.description {
+    display: none; /* hide description by default */
+    z-index: 4; /* description should be above images when shown */
+    position: absolute; /* position description absolutely within the item */
+}
+
+.container .item.normal:hover {
+    display: none; /* hide normal image on hover */
+}
+
+.container .item.normal:hover + .item.hover {
+    display: block; /* show hover image when normal image is hovered */
+}
+
+.container .item.active .description {
+    display: block;
+}
+
+.container .item.mac {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    max-width: 90%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.battery {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    transform: rotate( 60deg );
+    max-width: 20%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.crema {
+    position: absolute;
+    top: 40%;
+    left: 65%;
+    max-width: 28%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.ham {
+    position: absolute;
+    top: 45%;
+    left: 32%;
+    max-width: 28%;
+    transform: rotate( 240deg );
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.airpod {
+    position: absolute;
+    top: 45%;
+    left: 10%;
+    transform: rotate( 20deg );
+    max-width: 20%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.strap {
+    position: absolute;
+    top: 20%;
+    left: 41%;
+    transform: rotate( 260deg );
+    max-width: 8%;
+    height: auto;
+    opacity: 0.9;
+}
+
+.container .item.tumblr {
+    position: absolute;
+    left: 5%;
+    top: 7%;
+    max-width: 75%;
+    transform: rotate( 355deg );
+    height: auto;
+    opacity: 0.9;
+}
+
+.ticket {
+    position: absolute;
+    display: flex;
+    top: 20px;
+    right: 5%;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 23%;
+    margin: 5%;
+    background-color: white;
+}
+  
+.ticket-section {
+    border-bottom: 1px solid black;
+    margin: 15px;
+    padding-bottom: 15px;
+}
+
+.ticket-section.crema {
+    display: none;
+}
+
+.ticket-section.strap {
+    display: none;
+}
+
+.ticket-section.airpods {
+    display: none;
+}
+
+.ticket-section.tumblr {
+    display: none;
+}
+
+.ticket-section.mac {
+    display: none;
+}
+
+.ticket-section.ham {
+    display: none;
+}
+
+.ticket-section.battery {
+    display: none;
+}
+
+
+.description {
+    font-size: 13px;
+    color: gray;
+}
